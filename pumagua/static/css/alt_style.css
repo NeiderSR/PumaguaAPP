@@ -9,6 +9,12 @@
     margin: auto;
     width: 80%;
 }
+@media (min-width: 992px) { 
+  .busqueda{
+    display: inline;
+  }
+}
+
 
 
 /* CSS */
@@ -39,6 +45,13 @@
   user-select: none;
   -webkit-user-select: none;
   vertical-align: middle;
+}
+@media (min-width: 992px) { 
+  .button-18{
+    display: inline;
+    float:right; 
+    
+  }
 }
 
 .button-18:hover,

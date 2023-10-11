@@ -2012,6 +2012,12 @@ progress {
     transition: none;
   }
 }
+@media (min-width: 992px) { 
+  .form-control{
+    display: inline;
+  }
+}
+
 .form-control[type=file] {
   overflow: hidden;
 }
