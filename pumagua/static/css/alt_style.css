@@ -15,7 +15,12 @@
   }
 }
 
-
+.feedback {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    padding: 15px;
+}
 
 /* CSS */
 .button-18 {

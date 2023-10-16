@@ -42,10 +42,17 @@
 	        <form role="search">
            <input class="form-control busqueda" name="q" type="search" placeholder="Buscar bebederos" aria-label="Search">
 	         
-           <button class="button-18" type="submit">Buscar</button>
+           <button class="btn button-18" type="submit">
+	     <span class="glyphicon glyphicon-search"></span>Buscar
+	   </button>
           </form>
       </div>
     </header>
+
+    <br>
+    <div class="feedback">
+      {{ feedback_resultados }}
+    </div>
     
     <div class="mapa">
       {{ map|safe }}
