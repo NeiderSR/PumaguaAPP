@@ -16,17 +16,29 @@ def index(request):
         parseo_rutas = json.load(json_file)
 
     # poner las otras rutas acá
+    gr1 = folium.FeatureGroup(name='Ruta 1', show=False).add_to(m)
+    folium.PolyLine(parseo_rutas[0]['coordenadas'], tooltip='Ruta 1', color='#35B031', stroke=True, weight=5).add_to(gr1)
+
+    gr3 = folium.FeatureGroup(name='Ruta 3', show=False).add_to(m)
+    folium.PolyLine(parseo_rutas[2]['coordenadas'], tooltip='Ruta 3', color='#005E00', stroke=True, weight=5).add_to(gr3)
+
+    gr7 = folium.FeatureGroup(name='Ruta 7', show=False).add_to(m)
+    folium.PolyLine(parseo_rutas[6]['coordenadas'], tooltip='Ruta 7', color='#FAC125', stroke=True, weight=5).add_to(gr7)
+
+    gr8 = folium.FeatureGroup(name='Ruta 8', show=False).add_to(m)
+    folium.PolyLine(parseo_rutas[7]['coordenadas'], tooltip='Ruta 8', color='#121A75', stroke=True, weight=5).add_to(gr8)
+
     gr11 = folium.FeatureGroup(name='Ruta 11', show=False).add_to(m)
-    folium.PolyLine(parseo_rutas[10]['coordenadas'], tooltip='Ruta 11', color='#680084', stroke=True).add_to(gr11)
+    folium.PolyLine(parseo_rutas[10]['coordenadas'], tooltip='Ruta 11', color='#680084', stroke=True, weight=5).add_to(gr11)
     
     gr12 = folium.FeatureGroup(name='Ruta 12', show=False).add_to(m)
-    folium.PolyLine(parseo_rutas[11]['coordenadas'], tooltip='Ruta 12', color='#BD7EB4', stroke=True).add_to(gr12)
+    folium.PolyLine(parseo_rutas[11]['coordenadas'], tooltip='Ruta 12', color='#BD7EB4', stroke=True, weight=5).add_to(gr12)
     
     gr13 = folium.FeatureGroup(name='Ruta 13', show=False).add_to(m)
-    folium.PolyLine(parseo_rutas[12]['coordenadas'], tooltip='Ruta 13', color='#8FD7D4', stroke=True).add_to(gr13)
+    folium.PolyLine(parseo_rutas[12]['coordenadas'], tooltip='Ruta 13', color='#8FD7D4', stroke=True, weight=5).add_to(gr13)
     
     bicipuma = folium.FeatureGroup(name='Ruta Bicipuma', show=False).add_to(m)
-    folium.PolyLine(parseo_rutas[13]['coordenadas'], tooltip="Ruta Bicipuma", color='#00C528', stroke=True).add_to(bicipuma)
+    folium.PolyLine(parseo_rutas[13]['coordenadas'], tooltip="Ruta Bicipuma", color='#00C528', stroke=True, weight=5).add_to(bicipuma)
     
     folium.LayerControl().add_to(m)
 
@@ -43,17 +55,17 @@ def index(request):
         for coordenada in data:
             datos = (coordenada.latitud, coordenada.longitud)
             folium.Marker(datos,
-                          tooltip=coordenada.nombre,
-                          popup='<h6>'+coordenada.nombre+'</h6>\n'+'<h5>Ubicación: '+coordenada.ubicacion+'</h5>',
-                          icon=folium.Icon(icon='glyphicon glyphicon-tint')).add_to(m)
+                tooltip=coordenada.nombre,
+                popup='<h6>'+coordenada.nombre+'</h6>\n'+'<h5>Ubicación: '+coordenada.ubicacion+'</h5>',
+                icon=folium.Icon(icon='glyphicon glyphicon-tint')).add_to(m)
     else:
         mensaje = 'Mostrando todos los bebederos disponibles en CU.'
         for coordenada in datosBebederos:
             datos = (coordenada.latitud, coordenada.longitud)
             folium.Marker(datos,
-                          tooltip=coordenada.nombre,
-                          popup='<h6>'+coordenada.nombre+'</h6>\n'+'<h5>Ubicación: '+coordenada.ubicacion+'</h5>',
-                          icon=folium.Icon(icon='glyphicon glyphicon-tint')).add_to(m)
+                tooltip=coordenada.nombre,
+                popup='<h6>'+coordenada.nombre+'</h6>\n'+'<h5>Ubicación: '+coordenada.ubicacion+'</h5>',
+                icon=folium.Icon(icon='glyphicon glyphicon-tint')).add_to(m)
 
     f = folium.Figure(height=500)
     f.add_child(m)
