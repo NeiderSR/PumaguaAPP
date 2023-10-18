@@ -19,8 +19,8 @@ def index(request):
     gr1 = folium.FeatureGroup(name='Ruta 1', show=False).add_to(m)
     folium.PolyLine(parseo_rutas[0]['coordenadas'], tooltip='Ruta 1', color='#bdd348', stroke=True, weight=5).add_to(gr1)
     
-    #gr2 = folium.FeatureGroup(name='Ruta 2', show=False).add_to(m)
-    #folium.PolyLine(parseo_rutas[1]['coordenadas'], tooltip='Ruta 2', color='#ffe32c', stroke=True,  weight=5).add_to(gr2)
+    gr2 = folium.FeatureGroup(name='Ruta 2', show=False).add_to(m)
+    folium.PolyLine(parseo_rutas[1]['coordenadas'], tooltip='Ruta 2', color='#ffe32c', stroke=True,  weight=5).add_to(gr2)
 
     gr3 = folium.FeatureGroup(name='Ruta 3', show=False).add_to(m)
     folium.PolyLine(parseo_rutas[2]['coordenadas'], tooltip='Ruta 3', color='#015c3a', stroke=True, weight=5).add_to(gr3)
@@ -31,8 +31,8 @@ def index(request):
     gr5 = folium.FeatureGroup(name='Ruta 5', show=False).add_to(m)
     folium.PolyLine(parseo_rutas[4]['coordenadas'], tooltip='Ruta 5', color='#02a8db', stroke=True,  weight=5).add_to(gr5)
 
-    #gr6 = folium.FeatureGroup(name='Ruta 6', show=False).add_to(m)
-    #folium.PolyLine(parseo_rutas[5]['coordenadas'], tooltip='Ruta 6', color='#e46b2d', stroke=True,  weight=5).add_to(gr6)
+    gr6 = folium.FeatureGroup(name='Ruta 6', show=False).add_to(m)
+    folium.PolyLine(parseo_rutas[5]['coordenadas'], tooltip='Ruta 6', color='#e46b2d', stroke=True,  weight=5).add_to(gr6)
 
     gr7 = folium.FeatureGroup(name='Ruta 7', show=False).add_to(m)
     folium.PolyLine(parseo_rutas[6]['coordenadas'], tooltip='Ruta 7', color='#d9992f', stroke=True, weight=5).add_to(gr7)
@@ -43,8 +43,8 @@ def index(request):
     gr9 = folium.FeatureGroup(name='Ruta 9', show=False).add_to(m)
     folium.PolyLine(parseo_rutas[8]['coordenadas'], tooltip='Ruta 9', color='#6d1829', stroke=True, weight=5).add_to(gr9)
 
-    #gr10 = folium.FeatureGroup(name='Ruta 10', show=False).add_to(m)
-    #folium.PolyLine(parseo_rutas[9]['coordenadas'], tooltip='Ruta 10', color='#261c15', stroke=True, weight=5).add_to(gr10)
+    gr10 = folium.FeatureGroup(name='Ruta 10', show=False).add_to(m)
+    folium.PolyLine(parseo_rutas[9]['coordenadas'], tooltip='Ruta 10', color='#261c15', stroke=True, weight=5).add_to(gr10)
 
     gr11 = folium.FeatureGroup(name='Ruta 11', show=False).add_to(m)
     folium.PolyLine(parseo_rutas[10]['coordenadas'], tooltip='Ruta 11', color='#4c4e8f', stroke=True, weight=5).add_to(gr11)
