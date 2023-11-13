@@ -4,6 +4,7 @@ from pumaguaAPP.models import bebederos
 from django.db.models import Q
 from folium.plugins import LocateControl
 import json
+import os
 
 # Create your views here.
 def index(request):
@@ -15,7 +16,6 @@ def index(request):
     with open('rutas_pumabus.json') as json_file:
         parseo_rutas = json.load(json_file)
 
-    # poner las otras rutas acá
     gr1 = folium.FeatureGroup(name='Ruta 1', show=False).add_to(m)
     folium.PolyLine(parseo_rutas[0]['coordenadas'], tooltip='Ruta 1', color='#bdd348', stroke=True, weight=5).add_to(gr1)
     
@@ -74,7 +74,11 @@ def index(request):
             datos = (coordenada.latitud, coordenada.longitud)
             folium.Marker(datos,
                 tooltip=coordenada.nombre,
-                popup='<h6>'+coordenada.nombre+'</h6>\n'+'<h5>Ubicación: '+coordenada.ubicacion+'</h5>',
+                popup='<h5><b>'+coordenada.nombre+'</b></h5>\n'
+                          +'<h4>Ubicación: '+coordenada.ubicacion+'</h4>'
+                          +'<img src="'
+                          +imagenes_bebederos(coordenada.id_bebedero)
+                          +'" width="150px">',
                 icon=folium.Icon(icon='glyphicon glyphicon-tint')).add_to(m)
     else:
         mensaje = 'Mostrando todos los bebederos disponibles en CU.'
@@ -82,7 +86,11 @@ def index(request):
             datos = (coordenada.latitud, coordenada.longitud)
             folium.Marker(datos,
                 tooltip=coordenada.nombre,
-                popup='<h6>'+coordenada.nombre+'</h6>\n'+'<h5>Ubicación: '+coordenada.ubicacion+'</h5>',
+                popup='<h5><b>'+coordenada.nombre+'</b></h5>\n'
+                          +'<h4>Ubicación: '+coordenada.ubicacion+'</h4>'
+                          +'<img src="'
+                          +imagenes_bebederos(coordenada.id_bebedero)
+                          +'" width="150px" style="border-radius: 8px">',
                 icon=folium.Icon(icon='glyphicon glyphicon-tint')).add_to(m)
 
     f = folium.Figure(height=500)
@@ -91,3 +99,12 @@ def index(request):
                 'feedback_resultados': mensaje}
 
     return render(request, "index.html", contexto)
+
+def imagenes_bebederos(id_bebedero):
+    ruta = '/static/pumaguaAPP/'
+    imagen = str(id_bebedero) + '.jpg'
+    if os.path.exists(os.getcwd() + ruta + imagen):
+        ruta = ruta + imagen
+    else:
+        ruta = ruta + 'default.png'
+    return ruta

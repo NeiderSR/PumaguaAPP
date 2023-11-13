@@ -29,7 +29,7 @@ Bebedero Facultad de Ciencias, Edificio P
 Bebedero Facultad de Ciencias, Prometeo 
 Bebedero Facultad de Ciencias, Tlahuizcalpan, Edificio A
 Bebedero Facultad de Ciencias, Tlahuizcalpan, Edificio B
-Bebedero Facultad de Contaduría y Administración, Cafetería
+Bebedero Facultad de Ciencias, Cafetería
 Bebedero Facultad de Contaduría y Administración, Centro de Idiomas
 Bebedero Facultad de Contaduría y Administración, Edificio A
 Bebedero Facultad de Derecho, Edificio C 

@@ -313,10 +313,10 @@
 	"pk": 32,
 	"model": "pumaguaAPP.bebederos",
 	"fields": {
-	    "nombre": "Bebedero Facultad de Contaduría y Administración",
+	    "nombre": "Bebedero Facultad de Ciencias",
 	    "ubicacion": "Cafetería",
-	    "institucion": "Facultad de Contaduría y Administración",
-	    "palabras_clave": "Bebedero, Facultad, de, Contaduría, y, Administración, Cafetería"
+	    "institucion": "Facultad de Ciencias",
+	    "palabras_clave": "Bebedero, Facultad, de, Ciencias, Cafetería"
 	}
     },
     {
